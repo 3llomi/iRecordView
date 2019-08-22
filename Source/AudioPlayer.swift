@@ -24,8 +24,12 @@ enum AudioPlayerSounds {
     public func playAudioFile(soundType: AudioPlayerSounds) {
 
         
-        let path = Bundle(for: RecordView.self).path(forResource: getPathByType(soundType: soundType), ofType: "wav")!
-        let url = URL(fileURLWithPath: path)
+        let bundle = Bundle(identifier: "org.cocoapods.iRecordView")
+        
+        guard let url = bundle?.url(forResource: getPathByType(soundType: soundType), withExtension: "wav") else{
+            print("error getting Sound URL")
+            return
+        }
 
         do {
             player = try AVAudioPlayer(contentsOf: url)

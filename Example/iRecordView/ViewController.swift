@@ -64,14 +64,6 @@ class ViewController: UIViewController,RecordViewDelegate {
 
         recordView.delegate = self
 
-
-
-//        recordView.durationTimerColor = .red
-//        recordView.smallMicImage = myImage
-//        recordView.slideToCancelText = "Test"
-//        recordView.slideToCancelTextColor = .red
-//        recordView.slideToCancelArrowImage = myImage
-
         
         stateLabel = UILabel()
         stateLabel.translatesAutoresizingMaskIntoConstraints = false

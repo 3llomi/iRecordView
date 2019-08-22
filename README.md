@@ -1,15 +1,20 @@
 # iRecordView
 
-[![CI Status](https://img.shields.io/travis/3llomi/iRecordView.svg?style=flat)](https://travis-ci.org/3llomiiRecordView)
+<img src="etc/logo.png" width="70%" height="70%" />
+
+a Simple Audio Recorder View with hold to Record Button and Swipe to Cancel
+
 [![Version](https://img.shields.io/cocoapods/v/iRecordView.svg?style=flat)](https://cocoapods.org/pods/iRecordView)
 [![License](https://img.shields.io/cocoapods/l/iRecordView.svg?style=flat)](https://cocoapods.org/pods/iRecordView)
 [![Platform](https://img.shields.io/cocoapods/p/iRecordView.svg?style=flat)](https://cocoapods.org/pods/iRecordView)
 
-## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+## Demo
+<p align="center">
+<img src="etc/demo.GIF" height="500" alt="demo image" />
+</p>
 
-## Requirements
+
 
 ## Installation
 
@@ -49,12 +54,13 @@ now add your  `recordView`  to `recordButton`
     recordButton.recordView = recordView
 ```
 now you can observe the states using the delegate
+
 ```swift
     recordView.delegate = self
-    ```
-    this will give you 4 functions 
+```
+this will give you 4 functions 
     
-    ```swift
+```swift
     func onStart() {
     //start recording
     print("onStart")
@@ -99,7 +105,6 @@ recordView.slideToCancelArrowImage = myImage
 recordButton.listenForRecord = false
 ```
   
-  Looking for Android Version? try out [RecordView](https://github.com/3llomi/RecordView)
     
 ## Author
 
@@ -107,6 +112,10 @@ AbdulAlim Rajjoub
 
 ## Thanks/Credits
 [RATTLESNAKE-VIPER](https://github.com/RATTLESNAKE-VIPER/GLMoveToTrashAnimation) for [GLMoveToTrashAnimation](https://github.com/RATTLESNAKE-VIPER/GLMoveToTrashAnimation)
+
+## Looking for Android Version?
+try out [RecordView](https://github.com/3llomi/RecordView)
+
 ## License
 
 iRecordView is available under the MIT license. See the LICENSE file for more info.
