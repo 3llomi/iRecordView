@@ -1,0 +1,712 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D50583BF6CF3A6F670760AB0DD28333 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		0FC3C633373ED85FF97269A6B8E8249D /* iRecordView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A917B304FBE439FD7E0E092A64DAE5C /* iRecordView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41155522C1C37DA6536DB58A0321EA01 /* Pods-iRecordView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 89BCE284350C5F6B6DE5A8D6428A42A5 /* Pods-iRecordView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		592748D282BFE11F3F7CF67AB6824415 /* iRecordView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A47DF53CCB02FB5792EB0CB11DD26E4E /* iRecordView-dummy.m */; };
+		92DA3F7A63D8384442DF631063BC4D95 /* Pods-iRecordView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B89EACB2CFDA6656536BF1EEE44000 /* Pods-iRecordView_Example-dummy.m */; };
+		A2B95387D43A511A39A8159062681F6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		A829596B230C9C9800CDDF56 /* record_error.wav in Resources */ = {isa = PBXBuildFile; fileRef = A8295968230C9C9800CDDF56 /* record_error.wav */; };
+		A829596C230C9C9800CDDF56 /* record_finished.wav in Resources */ = {isa = PBXBuildFile; fileRef = A8295969230C9C9800CDDF56 /* record_finished.wav */; };
+		A829596D230C9C9800CDDF56 /* record_start.wav in Resources */ = {isa = PBXBuildFile; fileRef = A829596A230C9C9800CDDF56 /* record_start.wav */; };
+		A859A271230D893B001C85F0 /* mic_blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A859A25D230D893B001C85F0 /* mic_blue@2x.png */; };
+		A859A272230D893B001C85F0 /* mic_blue@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A859A25E230D893B001C85F0 /* mic_blue@3x.png */; };
+		A859A274230D893B001C85F0 /* mic_blue@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = A859A260230D893B001C85F0 /* mic_blue@1x.png */; };
+		A859A275230D893B001C85F0 /* bucket_body.png in Resources */ = {isa = PBXBuildFile; fileRef = A859A262230D893B001C85F0 /* bucket_body.png */; };
+		A859A277230D893B001C85F0 /* arrow@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = A859A265230D893B001C85F0 /* arrow@1x.png */; };
+		A859A279230D893B001C85F0 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A859A267230D893B001C85F0 /* arrow@2x.png */; };
+		A859A27A230D893B001C85F0 /* arrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A859A268230D893B001C85F0 /* arrow@3x.png */; };
+		A859A27B230D893B001C85F0 /* mic_red@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = A859A26A230D893B001C85F0 /* mic_red@1x.png */; };
+		A859A27C230D893B001C85F0 /* mic_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A859A26B230D893B001C85F0 /* mic_red@2x.png */; };
+		A859A27E230D893B001C85F0 /* mic_red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A859A26D230D893B001C85F0 /* mic_red@3x.png */; };
+		A859A27F230D893B001C85F0 /* bucket_lid.png in Resources */ = {isa = PBXBuildFile; fileRef = A859A26F230D893B001C85F0 /* bucket_lid.png */; };
+		A859A2AA230DDEC2001C85F0 /* iGesutreRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859A2A2230DDEC2001C85F0 /* iGesutreRecognizer.swift */; };
+		A859A2AB230DDEC2001C85F0 /* BucketImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859A2A3230DDEC2001C85F0 /* BucketImageView.swift */; };
+		A859A2AC230DDEC2001C85F0 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859A2A4230DDEC2001C85F0 /* RecordView.swift */; };
+		A859A2AD230DDEC2001C85F0 /* RecordViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859A2A5230DDEC2001C85F0 /* RecordViewDelegate.swift */; };
+		A859A2AE230DDEC2001C85F0 /* iRecordExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859A2A6230DDEC2001C85F0 /* iRecordExtensions.swift */; };
+		A859A2AF230DDEC2001C85F0 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859A2A7230DDEC2001C85F0 /* AudioPlayer.swift */; };
+		A859A2B0230DDEC2001C85F0 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859A2A8230DDEC2001C85F0 /* RecordButton.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6E37692DB566ACA24A0B6B0BD257064E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6004CBD0F841C438F63433D6361A187F;
+			remoteInfo = iRecordView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07B89EACB2CFDA6656536BF1EEE44000 /* Pods-iRecordView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iRecordView_Example-dummy.m"; sourceTree = "<group>"; };
+		0A652ED432D24A287CFBC9263511DCA0 /* Pods-iRecordView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iRecordView_Example-frameworks.sh"; sourceTree = "<group>"; };
+		2A405878D633584F2098D3818569C6B6 /* Pods-iRecordView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-iRecordView_Example.modulemap"; sourceTree = "<group>"; };
+		2D290F81EBB94A90814932B6FDE8A434 /* iRecordView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "iRecordView-Info.plist"; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		348764A420B0A25F4BBD91ADA3E8D020 /* Pods-iRecordView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iRecordView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		45F1A2CE275EC7164C5A3DCA97DC809A /* iRecordView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iRecordView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F515DB88B53A639C5BFB631B0B66B21 /* Pods-iRecordView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iRecordView_Example.release.xcconfig"; sourceTree = "<group>"; };
+		4F9D043DA5F18FB08A70189EF1412F2A /* Pods_iRecordView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iRecordView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6408A3CD2F9FD698E7A178CB38A6BEA4 /* iRecordView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = iRecordView.modulemap; sourceTree = "<group>"; };
+		6DFC97AE82922D20AB6AEA75E9E8C884 /* Pods-iRecordView_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iRecordView_Example-Info.plist"; sourceTree = "<group>"; };
+		89BCE284350C5F6B6DE5A8D6428A42A5 /* Pods-iRecordView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iRecordView_Example-umbrella.h"; sourceTree = "<group>"; };
+		97CB92802CC96D7A8773F6E5D0A6061B /* Pods-iRecordView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iRecordView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		9A917B304FBE439FD7E0E092A64DAE5C /* iRecordView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iRecordView-umbrella.h"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A47DF53CCB02FB5792EB0CB11DD26E4E /* iRecordView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "iRecordView-dummy.m"; sourceTree = "<group>"; };
+		A8295968230C9C9800CDDF56 /* record_error.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = record_error.wav; sourceTree = "<group>"; };
+		A8295969230C9C9800CDDF56 /* record_finished.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = record_finished.wav; sourceTree = "<group>"; };
+		A829596A230C9C9800CDDF56 /* record_start.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = record_start.wav; sourceTree = "<group>"; };
+		A859A25D230D893B001C85F0 /* mic_blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mic_blue@2x.png"; sourceTree = "<group>"; };
+		A859A25E230D893B001C85F0 /* mic_blue@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mic_blue@3x.png"; sourceTree = "<group>"; };
+		A859A260230D893B001C85F0 /* mic_blue@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mic_blue@1x.png"; sourceTree = "<group>"; };
+		A859A262230D893B001C85F0 /* bucket_body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bucket_body.png; sourceTree = "<group>"; };
+		A859A265230D893B001C85F0 /* arrow@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@1x.png"; sourceTree = "<group>"; };
+		A859A267230D893B001C85F0 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
+		A859A268230D893B001C85F0 /* arrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@3x.png"; sourceTree = "<group>"; };
+		A859A26A230D893B001C85F0 /* mic_red@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mic_red@1x.png"; sourceTree = "<group>"; };
+		A859A26B230D893B001C85F0 /* mic_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mic_red@2x.png"; sourceTree = "<group>"; };
+		A859A26D230D893B001C85F0 /* mic_red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mic_red@3x.png"; sourceTree = "<group>"; };
+		A859A26F230D893B001C85F0 /* bucket_lid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bucket_lid.png; sourceTree = "<group>"; };
+		A859A28A230DD9F7001C85F0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		A859A28B230DD9F7001C85F0 /* iRecordView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = iRecordView.podspec; path = ../iRecordView.podspec; sourceTree = "<group>"; };
+		A859A28C230DD9F8001C85F0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		A859A2A2230DDEC2001C85F0 /* iGesutreRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = iGesutreRecognizer.swift; path = Source/iGesutreRecognizer.swift; sourceTree = "<group>"; };
+		A859A2A3230DDEC2001C85F0 /* BucketImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BucketImageView.swift; path = Source/BucketImageView.swift; sourceTree = "<group>"; };
+		A859A2A4230DDEC2001C85F0 /* RecordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordView.swift; path = Source/RecordView.swift; sourceTree = "<group>"; };
+		A859A2A5230DDEC2001C85F0 /* RecordViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordViewDelegate.swift; path = Source/RecordViewDelegate.swift; sourceTree = "<group>"; };
+		A859A2A6230DDEC2001C85F0 /* iRecordExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = iRecordExtensions.swift; path = Source/iRecordExtensions.swift; sourceTree = "<group>"; };
+		A859A2A7230DDEC2001C85F0 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioPlayer.swift; path = Source/AudioPlayer.swift; sourceTree = "<group>"; };
+		A859A2A8230DDEC2001C85F0 /* RecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordButton.swift; path = Source/RecordButton.swift; sourceTree = "<group>"; };
+		B70ABDA9B5DE9C60FD7218D5D09FF3B2 /* Pods-iRecordView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-iRecordView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BC5DEB2A4BD8DDFFFF9B2553BD9B75F0 /* iRecordView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iRecordView.xcconfig; sourceTree = "<group>"; };
+		C50D4E70277E9FC312537DE8C046DDBA /* iRecordView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iRecordView-prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0E9F78B2F5CDFCBF3B966500ED4D9C3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D50583BF6CF3A6F670760AB0DD28333 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26DC63C60BBE6FF51E3332C12C732089 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2B95387D43A511A39A8159062681F6A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00AB2C7A100F68846069B53941D57839 /* Pods-iRecordView_Example */ = {
+			isa = PBXGroup;
+			children = (
+				2A405878D633584F2098D3818569C6B6 /* Pods-iRecordView_Example.modulemap */,
+				B70ABDA9B5DE9C60FD7218D5D09FF3B2 /* Pods-iRecordView_Example-acknowledgements.markdown */,
+				97CB92802CC96D7A8773F6E5D0A6061B /* Pods-iRecordView_Example-acknowledgements.plist */,
+				07B89EACB2CFDA6656536BF1EEE44000 /* Pods-iRecordView_Example-dummy.m */,
+				0A652ED432D24A287CFBC9263511DCA0 /* Pods-iRecordView_Example-frameworks.sh */,
+				6DFC97AE82922D20AB6AEA75E9E8C884 /* Pods-iRecordView_Example-Info.plist */,
+				89BCE284350C5F6B6DE5A8D6428A42A5 /* Pods-iRecordView_Example-umbrella.h */,
+				348764A420B0A25F4BBD91ADA3E8D020 /* Pods-iRecordView_Example.debug.xcconfig */,
+				4F515DB88B53A639C5BFB631B0B66B21 /* Pods-iRecordView_Example.release.xcconfig */,
+			);
+			name = "Pods-iRecordView_Example";
+			path = "Target Support Files/Pods-iRecordView_Example";
+			sourceTree = "<group>";
+		};
+		90C2CD9A4C8215A0B90DF9835CD70E06 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				00AB2C7A100F68846069B53941D57839 /* Pods-iRecordView_Example */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		A8295967230C9C9800CDDF56 /* record_sounds */ = {
+			isa = PBXGroup;
+			children = (
+				A8295968230C9C9800CDDF56 /* record_error.wav */,
+				A8295969230C9C9800CDDF56 /* record_finished.wav */,
+				A829596A230C9C9800CDDF56 /* record_start.wav */,
+			);
+			path = record_sounds;
+			sourceTree = "<group>";
+		};
+		A859A25B230D8922001C85F0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A859A262230D893B001C85F0 /* bucket_body.png */,
+				A859A26F230D893B001C85F0 /* bucket_lid.png */,
+				A859A265230D893B001C85F0 /* arrow@1x.png */,
+				A859A267230D893B001C85F0 /* arrow@2x.png */,
+				A859A268230D893B001C85F0 /* arrow@3x.png */,
+				A859A260230D893B001C85F0 /* mic_blue@1x.png */,
+				A859A25D230D893B001C85F0 /* mic_blue@2x.png */,
+				A859A25E230D893B001C85F0 /* mic_blue@3x.png */,
+				A859A26A230D893B001C85F0 /* mic_red@1x.png */,
+				A859A26B230D893B001C85F0 /* mic_red@2x.png */,
+				A859A26D230D893B001C85F0 /* mic_red@3x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		A859A283230DC124001C85F0 /* Res */ = {
+			isa = PBXGroup;
+			children = (
+				A8295967230C9C9800CDDF56 /* record_sounds */,
+				A859A25B230D8922001C85F0 /* Images */,
+			);
+			path = Res;
+			sourceTree = "<group>";
+		};
+		A859A28D230DDA32001C85F0 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				A859A28B230DD9F7001C85F0 /* iRecordView.podspec */,
+				A859A28C230DD9F8001C85F0 /* LICENSE */,
+				A859A28A230DD9F7001C85F0 /* README.md */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		A859A2A0230DDE5C001C85F0 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				A859A2A7230DDEC2001C85F0 /* AudioPlayer.swift */,
+				A859A2A3230DDEC2001C85F0 /* BucketImageView.swift */,
+				A859A2A2230DDEC2001C85F0 /* iGesutreRecognizer.swift */,
+				A859A2A6230DDEC2001C85F0 /* iRecordExtensions.swift */,
+				A859A2A8230DDEC2001C85F0 /* RecordButton.swift */,
+				A859A2A4230DDEC2001C85F0 /* RecordView.swift */,
+				A859A2A5230DDEC2001C85F0 /* RecordViewDelegate.swift */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				DF2C4517BCA20CB3875D09D054E33B38 /* iRecordView */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				CF4ACAC19A66972E61A0D01C9082E079 /* Products */,
+				90C2CD9A4C8215A0B90DF9835CD70E06 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		CF4ACAC19A66972E61A0D01C9082E079 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45F1A2CE275EC7164C5A3DCA97DC809A /* iRecordView.framework */,
+				4F9D043DA5F18FB08A70189EF1412F2A /* Pods_iRecordView_Example.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DBFA0D5E0D2CF23FCC9CB01E27A8A5BA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6408A3CD2F9FD698E7A178CB38A6BEA4 /* iRecordView.modulemap */,
+				BC5DEB2A4BD8DDFFFF9B2553BD9B75F0 /* iRecordView.xcconfig */,
+				A47DF53CCB02FB5792EB0CB11DD26E4E /* iRecordView-dummy.m */,
+				2D290F81EBB94A90814932B6FDE8A434 /* iRecordView-Info.plist */,
+				C50D4E70277E9FC312537DE8C046DDBA /* iRecordView-prefix.pch */,
+				9A917B304FBE439FD7E0E092A64DAE5C /* iRecordView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/iRecordView";
+			sourceTree = "<group>";
+		};
+		DF2C4517BCA20CB3875D09D054E33B38 /* iRecordView */ = {
+			isa = PBXGroup;
+			children = (
+				A859A2A0230DDE5C001C85F0 /* Source */,
+				A859A28D230DDA32001C85F0 /* Pod */,
+				A859A283230DC124001C85F0 /* Res */,
+				DBFA0D5E0D2CF23FCC9CB01E27A8A5BA /* Support Files */,
+			);
+			name = iRecordView;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9B42B338AB80745842C0386B6C69861C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41155522C1C37DA6536DB58A0321EA01 /* Pods-iRecordView_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D34F8CE5F56CF4B2EFD369F27E99A0A4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FC3C633373ED85FF97269A6B8E8249D /* iRecordView-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6004CBD0F841C438F63433D6361A187F /* iRecordView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FF8C9BD3622040FA09913951CC79993 /* Build configuration list for PBXNativeTarget "iRecordView" */;
+			buildPhases = (
+				D34F8CE5F56CF4B2EFD369F27E99A0A4 /* Headers */,
+				98154DD4C2B63875CF164F1D144951DA /* Sources */,
+				26DC63C60BBE6FF51E3332C12C732089 /* Frameworks */,
+				C5760A2BDDF0240F1DB8A295DF385F1F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iRecordView;
+			productName = iRecordView;
+			productReference = 45F1A2CE275EC7164C5A3DCA97DC809A /* iRecordView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		71246B7F96028B345DD686B1DB804664 /* Pods-iRecordView_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCC4ACB6A9FBCB760DB0783FEE554200 /* Build configuration list for PBXNativeTarget "Pods-iRecordView_Example" */;
+			buildPhases = (
+				9B42B338AB80745842C0386B6C69861C /* Headers */,
+				F197D387AD363492A5861AF7C4419421 /* Sources */,
+				0E9F78B2F5CDFCBF3B966500ED4D9C3D /* Frameworks */,
+				1937236791877AF866D986C0638271F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB2A618B04F308D8D83C490F618AAA6D /* PBXTargetDependency */,
+			);
+			name = "Pods-iRecordView_Example";
+			productName = "Pods-iRecordView_Example";
+			productReference = 4F9D043DA5F18FB08A70189EF1412F2A /* Pods_iRecordView_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				TargetAttributes = {
+					6004CBD0F841C438F63433D6361A187F = {
+						LastSwiftMigration = 1020;
+					};
+				};
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = CF4ACAC19A66972E61A0D01C9082E079 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6004CBD0F841C438F63433D6361A187F /* iRecordView */,
+				71246B7F96028B345DD686B1DB804664 /* Pods-iRecordView_Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1937236791877AF866D986C0638271F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5760A2BDDF0240F1DB8A295DF385F1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A859A27C230D893B001C85F0 /* mic_red@2x.png in Resources */,
+				A859A275230D893B001C85F0 /* bucket_body.png in Resources */,
+				A859A27E230D893B001C85F0 /* mic_red@3x.png in Resources */,
+				A859A274230D893B001C85F0 /* mic_blue@1x.png in Resources */,
+				A859A27F230D893B001C85F0 /* bucket_lid.png in Resources */,
+				A829596B230C9C9800CDDF56 /* record_error.wav in Resources */,
+				A829596C230C9C9800CDDF56 /* record_finished.wav in Resources */,
+				A859A277230D893B001C85F0 /* arrow@1x.png in Resources */,
+				A859A272230D893B001C85F0 /* mic_blue@3x.png in Resources */,
+				A859A279230D893B001C85F0 /* arrow@2x.png in Resources */,
+				A859A27A230D893B001C85F0 /* arrow@3x.png in Resources */,
+				A859A27B230D893B001C85F0 /* mic_red@1x.png in Resources */,
+				A859A271230D893B001C85F0 /* mic_blue@2x.png in Resources */,
+				A829596D230C9C9800CDDF56 /* record_start.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		98154DD4C2B63875CF164F1D144951DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A859A2AD230DDEC2001C85F0 /* RecordViewDelegate.swift in Sources */,
+				A859A2AB230DDEC2001C85F0 /* BucketImageView.swift in Sources */,
+				A859A2B0230DDEC2001C85F0 /* RecordButton.swift in Sources */,
+				A859A2AA230DDEC2001C85F0 /* iGesutreRecognizer.swift in Sources */,
+				A859A2AF230DDEC2001C85F0 /* AudioPlayer.swift in Sources */,
+				592748D282BFE11F3F7CF67AB6824415 /* iRecordView-dummy.m in Sources */,
+				A859A2AC230DDEC2001C85F0 /* RecordView.swift in Sources */,
+				A859A2AE230DDEC2001C85F0 /* iRecordExtensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F197D387AD363492A5861AF7C4419421 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92DA3F7A63D8384442DF631063BC4D95 /* Pods-iRecordView_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BB2A618B04F308D8D83C490F618AAA6D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = iRecordView;
+			target = 6004CBD0F841C438F63433D6361A187F /* iRecordView */;
+			targetProxy = 6E37692DB566ACA24A0B6B0BD257064E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		252874DB7C3952939169940B0A4D070A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC5DEB2A4BD8DDFFFF9B2553BD9B75F0 /* iRecordView.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/iRecordView/iRecordView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/iRecordView/iRecordView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/iRecordView/iRecordView.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = com.devlomi.iRecordView;
+				PRODUCT_MODULE_NAME = iRecordView;
+				PRODUCT_NAME = iRecordView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		29DDBCA99AE6C05D700B2531B7643E14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 348764A420B0A25F4BBD91ADA3E8D020 /* Pods-iRecordView_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-iRecordView_Example/Pods-iRecordView_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-iRecordView_Example/Pods-iRecordView_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.devlomi.iRecordView-Example";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B0087CB4594321EF41619F3181FE120E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		B8BCBD0110C2658BB5DAADB9B7D97B92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C02AF80D14FC8713196B0C4E5CCE53E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC5DEB2A4BD8DDFFFF9B2553BD9B75F0 /* iRecordView.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/iRecordView/iRecordView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/iRecordView/iRecordView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/iRecordView/iRecordView.modulemap";
+				PRODUCT_BUNDLE_IDENTIFIER = com.devlomi.iRecordView;
+				PRODUCT_MODULE_NAME = iRecordView;
+				PRODUCT_NAME = iRecordView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DA4274562F24954D83E15BCA4A5547DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F515DB88B53A639C5BFB631B0B66B21 /* Pods-iRecordView_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-iRecordView_Example/Pods-iRecordView_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-iRecordView_Example/Pods-iRecordView_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.devlomi.iRecordView-Example";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8BCBD0110C2658BB5DAADB9B7D97B92 /* Debug */,
+				B0087CB4594321EF41619F3181FE120E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9FF8C9BD3622040FA09913951CC79993 /* Build configuration list for PBXNativeTarget "iRecordView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C02AF80D14FC8713196B0C4E5CCE53E8 /* Debug */,
+				252874DB7C3952939169940B0A4D070A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCC4ACB6A9FBCB760DB0783FEE554200 /* Build configuration list for PBXNativeTarget "Pods-iRecordView_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29DDBCA99AE6C05D700B2531B7643E14 /* Debug */,
+				DA4274562F24954D83E15BCA4A5547DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

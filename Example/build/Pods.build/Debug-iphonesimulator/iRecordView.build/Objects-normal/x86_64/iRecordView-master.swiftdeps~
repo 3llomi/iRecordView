@@ -1,0 +1,11 @@
+version: "Apple Swift version 5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+options: "217e48f479ab121dc06ba138c0b0edb9"
+build_time: [1566394745, 344808000]
+inputs:
+  "/Volumes/Data/iRecordViewPod/iRecordView/iGesutreRecognizer.swift": [1566317509, 550353299]
+  "/Volumes/Data/iRecordViewPod/iRecordView/RecordViewDelegate.swift": [1566394452, 290307333]
+  "/Volumes/Data/iRecordViewPod/iRecordView/BucketImageView.swift": [1566336215, 961758784]
+  "/Volumes/Data/iRecordViewPod/iRecordView/AudioPlayer.swift": [1566394605, 555097060]
+  "/Volumes/Data/iRecordViewPod/iRecordView/RecordView.swift": [1566394660, 118392591]
+  "/Volumes/Data/iRecordViewPod/iRecordView/RecordButton.swift": [1566394660, 109984352]
+  "/Volumes/Data/iRecordViewPod/iRecordView/Extensions.swift": [1566317506, 256403834]

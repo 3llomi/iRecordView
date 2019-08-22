@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'iRecordView_Example' do
+  pod 'iRecordView', :path => '../'
+
+  target 'iRecordView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

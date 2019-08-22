@@ -1,0 +1,6 @@
+framework module iRecordView {
+  umbrella header "iRecordView-umbrella.h"
+
+  export *
+  module * { export * }
+}
