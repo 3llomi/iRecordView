@@ -11,7 +11,7 @@ a Simple Audio Recorder View with hold to Record Button and Swipe to Cancel
 
 ## Demo
 <p align="center">
-<img src="etc/demo.GIF" height="500" alt="demo image" />
+<img src="etc/demo.gif" height="500" alt="demo image" />
 </p>
 
 
