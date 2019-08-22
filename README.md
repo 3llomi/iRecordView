@@ -111,7 +111,7 @@ recordButton.listenForRecord = false
 AbdulAlim Rajjoub
 
 ## Thanks/Credits
-[RATTLESNAKE-VIPER](https://github.com/RATTLESNAKE-VIPER/GLMoveToTrashAnimation) for [GLMoveToTrashAnimation](https://github.com/RATTLESNAKE-VIPER/GLMoveToTrashAnimation)
+[RATTLESNAKE-VIPER](https://github.com/RATTLESNAKE-VIPER) for [GLMoveToTrashAnimation](https://github.com/RATTLESNAKE-VIPER/GLMoveToTrashAnimation)
 
 ## Looking for Android Version?
 try out [RecordView](https://github.com/3llomi/RecordView)
