@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'iRecordView'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'A Simple Audio Recorder View with hold to Record Button and Swipe to Cancel.'
 
   s.description      = <<-DESC
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/3llomi/iRecordView.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/3llomi'
 
-s.ios.deployment_target = '12.0'
+s.ios.deployment_target = '11.0'
 
   s.source_files = 'Source/**/*'
   
