@@ -21,7 +21,7 @@ public class RecordView: UIView, CAAnimationDelegate {
     private var timerStackView: UIStackView!
     private var slideToCancelStackVIew: UIStackView!
 
-    public var delegate: RecordViewDelegate?
+    public weak var delegate: RecordViewDelegate?
     public var offset: CGFloat = 20
     public var isSoundEnabled = true
 
