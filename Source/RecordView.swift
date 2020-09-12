@@ -81,10 +81,6 @@ public class RecordView: UIView, CAAnimationDelegate {
         return label
     }()
 
-
-    
-
-
     private func setup() {
         bucketImageView = BucketImageView(frame: frame)
         bucketImageView.animationDelegate = self
@@ -135,7 +131,14 @@ public class RecordView: UIView, CAAnimationDelegate {
     }
 
     func onTouchUp(recordButton: RecordButton) {
+        guard !isSwiped else {
+            return
+        }
         onFinish(recordButton: recordButton)
+    }
+    
+    func onTouchCancelled(recordButton: RecordButton) {
+        onTouchCancel(recordButton: recordButton)
     }
 
 
@@ -152,9 +155,23 @@ public class RecordView: UIView, CAAnimationDelegate {
 
     //this will be called when user starts tapping the button
     private func onStart(recordButton: RecordButton) {
+        isSwiped = false
+
+        if isSoundEnabled {
+            audioPlayer.playAudioFile(soundType: .start)
+            audioPlayer.didFinishPlaying = { [weak self] _ in
+                self?.prepareToStartRecording(recordButton: recordButton)
+                self?.delegate?.onStart()
+            }
+        } else {
+            prepareToStartRecording(recordButton: recordButton)
+            delegate?.onStart()
+        }
+    }
+    
+    private func prepareToStartRecording(recordButton: RecordButton) {
         resetTimer()
 
-        isSwiped = false
         //start timer
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateDuration), userInfo: nil, repeats: true)
 
@@ -175,26 +192,27 @@ public class RecordView: UIView, CAAnimationDelegate {
         bucketImageView.isHidden = false
         bucketImageView.resetAnimations()
         bucketImageView.animateAlpha()
-
-        if isSoundEnabled {
-            audioPlayer.playAudioFile(soundType: .start)
-        }
-
-        delegate?.onStart()
-
     }
 
-    //this will be called when user swipes to the left and cancel the record
-    private func onSwipe(recordButton: RecordButton) {
-        isSwiped = true
-
+    fileprivate func animateRecordButtonToIdentity(_ recordButton: RecordButton) {
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
             recordButton.transform = .identity
         })
-
-
+    }
+    
+    //this will be called when user swipes to the left and cancel the record
+    fileprivate func hideCancelStackViewAndTimeLabel() {
         slideToCancelStackVIew.isHidden = true
         timerLabel.isHidden = true
+    }
+    
+    private func onSwipe(recordButton: RecordButton) {
+        isSwiped = true
+        audioPlayer.didFinishPlaying = nil
+        
+        animateRecordButtonToIdentity(recordButton)
+
+        hideCancelStackViewAndTimeLabel()
 
         if !isLessThanOneSecond() {
             bucketImageView.animateBucketAndMic()
@@ -208,6 +226,23 @@ public class RecordView: UIView, CAAnimationDelegate {
 
         delegate?.onCancel()
     }
+    
+    private func onTouchCancel(recordButton: RecordButton) {
+        isSwiped = false
+        
+        audioPlayer.didFinishPlaying = nil
+        
+        animateRecordButtonToIdentity(recordButton)
+        
+        hideCancelStackViewAndTimeLabel()
+        
+        bucketImageView.isHidden = true
+        delegate?.onAnimationEnd?()
+        
+        resetTimer()
+        
+        delegate?.onCancel()
+    }
 
     private func resetTimer() {
         timer?.invalidate()
@@ -218,7 +253,7 @@ public class RecordView: UIView, CAAnimationDelegate {
     //this will be called when user lift his finger
     private func onFinish(recordButton: RecordButton) {
         isSwiped = false
-
+        audioPlayer.didFinishPlaying = nil
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
             recordButton.transform = .identity
         })
@@ -236,7 +271,6 @@ public class RecordView: UIView, CAAnimationDelegate {
             }
         } else {
             if isSoundEnabled {
-
                 audioPlayer.playAudioFile(soundType: .end)
             }
         }
@@ -247,11 +281,10 @@ public class RecordView: UIView, CAAnimationDelegate {
 
     }
 
-
     //this will be called when user starts to move his finger
     func touchMoved(recordButton: RecordButton, sender: UIPanGestureRecognizer) {
 
-        if isSwiped {
+        guard !isSwiped else {
             return
         }
 
@@ -274,17 +307,11 @@ public class RecordView: UIView, CAAnimationDelegate {
                 }
 
             }
-
-        case .ended:
-            onFinish(recordButton: recordButton)
-
-
         default:
             break
         }
 
     }
-
 
 }
 
