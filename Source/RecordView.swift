@@ -24,6 +24,7 @@ public class RecordView: UIView, CAAnimationDelegate {
     public weak var delegate: RecordViewDelegate?
     public var offset: CGFloat = 20
     public var isSoundEnabled = true
+    public var buttonTransformScale: CGFloat = 2
 
     public var slideToCancelText: String! {
         didSet {
@@ -111,14 +112,14 @@ public class RecordView: UIView, CAAnimationDelegate {
         arrow.heightAnchor.constraint(equalToConstant: 15).isActive = true
 
         slideToCancelStackVIew.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        slideToCancelStackVIew.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        slideToCancelStackVIew.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
 
 
         timerStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        timerStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        timerStackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
 
 
-        mTransform = CGAffineTransform(scaleX: 2.0, y: 2.0)
+        mTransform = CGAffineTransform(scaleX: buttonTransformScale, y: buttonTransformScale)
 
         audioPlayer = AudioPlayer()
     }
