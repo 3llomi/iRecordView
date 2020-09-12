@@ -13,16 +13,18 @@ enum AudioPlayerSounds {
     case start, end, error
 }
 
- class AudioPlayer {
+class AudioPlayer: NSObject {
 
     private var player: AVAudioPlayer!
+    
+    var didFinishPlaying: ((Bool) -> Void)?
 
-    init() {
+    override init() {
         player = AVAudioPlayer()
     }
 
     public func playAudioFile(soundType: AudioPlayerSounds) {
-
+        didFinishPlaying = nil
         
         let bundle = Bundle(identifier: "org.cocoapods.iRecordView")
         
@@ -32,9 +34,14 @@ enum AudioPlayerSounds {
         }
 
         do {
-            player = try AVAudioPlayer(contentsOf: url)
+            try AVAudioSession.sharedInstance().setCategory(.playAndRecord)
+            try AVAudioSession.sharedInstance().overrideOutputAudioPort(.speaker)
+            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+            
+            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
+            player.delegate = self
+            player.prepareToPlay()
             player.play()
-
         } catch {
 
             print("could not play audio file!")
@@ -56,4 +63,11 @@ enum AudioPlayerSounds {
         }
     }
 
+}
+
+extension AudioPlayer: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        didFinishPlaying?(flag)
+        didFinishPlaying = nil
+    }
 }
