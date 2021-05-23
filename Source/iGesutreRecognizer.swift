@@ -8,22 +8,21 @@
 
 import UIKit
 
-protocol GesutreDelegate {
-    func onStart()
-    func onEnd()
-}
-
-
 class iGesutreRecognizer: UIGestureRecognizer {
-    var gestureDelegate: GesutreDelegate?
-
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
-        gestureDelegate?.onStart()
+        guard state != .began else {
+            return
+        }
+        state = .began
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent) {
-        gestureDelegate?.onEnd()
+        state = .ended
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent) {
+        state = .cancelled
     }
 
 }

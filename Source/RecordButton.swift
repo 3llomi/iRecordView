@@ -41,7 +41,7 @@ open class RecordButton: UIButton, UIGestureRecognizerDelegate {
         setTitle("", for: .normal)
 
         if image(for: .normal) == nil {
-            let image = UIImage.fromPod("mic_blue")
+            let image = UIImage.fromPod("mic_blue").withRenderingMode(.alwaysTemplate)
             setImage(image, for: .normal)
             
             tintColor = .blue
@@ -54,7 +54,7 @@ open class RecordButton: UIButton, UIGestureRecognizerDelegate {
         
 
         touchDownAndUpGesture = iGesutreRecognizer(target: self, action: #selector(handleUpAndDown(_:)))
-        touchDownAndUpGesture.gestureDelegate = self
+        touchDownAndUpGesture.delegate = self
 
 
         addGestureRecognizer(moveGesture)
@@ -89,7 +89,6 @@ open class RecordButton: UIButton, UIGestureRecognizerDelegate {
         recordView.onTouchUp(recordButton: self)
     }
 
-
     @objc private func touchMoved(_ sender: UIPanGestureRecognizer) {
         recordView.touchMoved(recordButton: self, sender: sender)
     }
@@ -101,24 +100,23 @@ open class RecordButton: UIButton, UIGestureRecognizerDelegate {
 
         case .ended:
             recordView.onTouchUp(recordButton: self)
+            
+        case .cancelled:
+            recordView.onTouchCancelled(recordButton: self)
 
         default:
             break
         }
     }
+    
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return (gestureRecognizer == touchDownAndUpGesture && otherGestureRecognizer == moveGesture) || (gestureRecognizer == moveGesture && otherGestureRecognizer == touchDownAndUpGesture)
+    }
 
 
 }
 
-extension RecordButton: GesutreDelegate {
-    func onStart() {
-        recordView.onTouchDown(recordButton: self)
-    }
-
-    func onEnd() {
-        recordView.onTouchUp(recordButton: self)
-    }
-
+extension RecordButton {
     open override func layoutSubviews() {
         super.layoutSubviews()
         superview?.bringSubviewToFront(self)

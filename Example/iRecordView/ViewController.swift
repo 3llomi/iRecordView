@@ -59,7 +59,7 @@ class ViewController: UIViewController,RecordViewDelegate {
 
         recordView.trailingAnchor.constraint(equalTo: recordButton.leadingAnchor, constant: -20).isActive = true
         recordView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
-        recordView.bottomAnchor.constraint(equalTo: recordButton.bottomAnchor).isActive = true
+        recordView.centerYAnchor.constraint(equalTo: recordButton.centerYAnchor).isActive = true
         recordButton.recordView = recordView
 
         recordView.delegate = self

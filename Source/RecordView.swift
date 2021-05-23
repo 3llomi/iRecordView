@@ -24,6 +24,7 @@ public class RecordView: UIView, CAAnimationDelegate {
     public weak var delegate: RecordViewDelegate?
     public var offset: CGFloat = 20
     public var isSoundEnabled = true
+    public var buttonTransformScale: CGFloat = 2
 
     public var slideToCancelText: String! {
         didSet {
@@ -80,10 +81,6 @@ public class RecordView: UIView, CAAnimationDelegate {
         return label
     }()
 
-
-    
-
-
     private func setup() {
         bucketImageView = BucketImageView(frame: frame)
         bucketImageView.animationDelegate = self
@@ -111,14 +108,14 @@ public class RecordView: UIView, CAAnimationDelegate {
         arrow.heightAnchor.constraint(equalToConstant: 15).isActive = true
 
         slideToCancelStackVIew.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        slideToCancelStackVIew.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        slideToCancelStackVIew.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
 
 
         timerStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        timerStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        timerStackView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
 
 
-        mTransform = CGAffineTransform(scaleX: 2.0, y: 2.0)
+        mTransform = CGAffineTransform(scaleX: buttonTransformScale, y: buttonTransformScale)
 
         audioPlayer = AudioPlayer()
     }
@@ -134,7 +131,14 @@ public class RecordView: UIView, CAAnimationDelegate {
     }
 
     func onTouchUp(recordButton: RecordButton) {
+        guard !isSwiped else {
+            return
+        }
         onFinish(recordButton: recordButton)
+    }
+    
+    func onTouchCancelled(recordButton: RecordButton) {
+        onTouchCancel(recordButton: recordButton)
     }
 
 
@@ -151,9 +155,23 @@ public class RecordView: UIView, CAAnimationDelegate {
 
     //this will be called when user starts tapping the button
     private func onStart(recordButton: RecordButton) {
+        isSwiped = false
+
+        self.prepareToStartRecording(recordButton: recordButton)
+
+        if isSoundEnabled {
+            audioPlayer.playAudioFile(soundType: .start)
+            audioPlayer.didFinishPlaying = { [weak self] _ in
+                self?.delegate?.onStart()
+            }
+        } else {
+            delegate?.onStart()
+        }
+    }
+    
+    private func prepareToStartRecording(recordButton: RecordButton) {
         resetTimer()
 
-        isSwiped = false
         //start timer
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateDuration), userInfo: nil, repeats: true)
 
@@ -174,26 +192,27 @@ public class RecordView: UIView, CAAnimationDelegate {
         bucketImageView.isHidden = false
         bucketImageView.resetAnimations()
         bucketImageView.animateAlpha()
-
-        if isSoundEnabled {
-            audioPlayer.playAudioFile(soundType: .start)
-        }
-
-        delegate?.onStart()
-
     }
 
-    //this will be called when user swipes to the left and cancel the record
-    private func onSwipe(recordButton: RecordButton) {
-        isSwiped = true
-
+    fileprivate func animateRecordButtonToIdentity(_ recordButton: RecordButton) {
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
             recordButton.transform = .identity
         })
-
-
+    }
+    
+    //this will be called when user swipes to the left and cancel the record
+    fileprivate func hideCancelStackViewAndTimeLabel() {
         slideToCancelStackVIew.isHidden = true
         timerLabel.isHidden = true
+    }
+    
+    private func onSwipe(recordButton: RecordButton) {
+        isSwiped = true
+        audioPlayer.didFinishPlaying = nil
+        
+        animateRecordButtonToIdentity(recordButton)
+
+        hideCancelStackViewAndTimeLabel()
 
         if !isLessThanOneSecond() {
             bucketImageView.animateBucketAndMic()
@@ -207,6 +226,23 @@ public class RecordView: UIView, CAAnimationDelegate {
 
         delegate?.onCancel()
     }
+    
+    private func onTouchCancel(recordButton: RecordButton) {
+        isSwiped = false
+        
+        audioPlayer.didFinishPlaying = nil
+        
+        animateRecordButtonToIdentity(recordButton)
+        
+        hideCancelStackViewAndTimeLabel()
+        
+        bucketImageView.isHidden = true
+        delegate?.onAnimationEnd?()
+        
+        resetTimer()
+        
+        delegate?.onCancel()
+    }
 
     private func resetTimer() {
         timer?.invalidate()
@@ -217,7 +253,7 @@ public class RecordView: UIView, CAAnimationDelegate {
     //this will be called when user lift his finger
     private func onFinish(recordButton: RecordButton) {
         isSwiped = false
-
+        audioPlayer.didFinishPlaying = nil
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
             recordButton.transform = .identity
         })
@@ -235,7 +271,6 @@ public class RecordView: UIView, CAAnimationDelegate {
             }
         } else {
             if isSoundEnabled {
-
                 audioPlayer.playAudioFile(soundType: .end)
             }
         }
@@ -246,11 +281,10 @@ public class RecordView: UIView, CAAnimationDelegate {
 
     }
 
-
     //this will be called when user starts to move his finger
     func touchMoved(recordButton: RecordButton, sender: UIPanGestureRecognizer) {
 
-        if isSwiped {
+        guard !isSwiped else {
             return
         }
 
@@ -273,17 +307,11 @@ public class RecordView: UIView, CAAnimationDelegate {
                 }
 
             }
-
-        case .ended:
-            onFinish(recordButton: recordButton)
-
-
         default:
             break
         }
 
     }
-
 
 }
 
